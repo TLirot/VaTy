@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <base href="{{base}}">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="description" content="A fully featured admin theme which can be used to build CRM, CMS, etc.">
+    <meta name="author" content="Coderthemes">
+    
+    <title>VaTy</title>
+
+    <link rel="shortcut icon" href="theme/assets/images/favicon_1.ico">
+
+    <link href="theme/plugins/switchery/switchery.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="theme/plugins/morris/morris.css">
+    <link href="theme/assets/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="theme/assets/css/icons.css" rel="stylesheet" type="text/css">
+    <link href="theme/assets/css/style.css" rel="stylesheet" type="text/css">
+    <script src="theme/assets/js/modernizr.min.js"></script>
+
+    <style type="text/css">
+        .btnTicket {
+            margin-bottom: 5%;
+        }
+
+        .btnTicket>button>a {
+            color: white;
+        }
+
+        .btnTicketGroup {
+            margin-left: 5%;
+        }
+        .height_imgs{
+            height: 100px;
+        }
+        #plus,#less,#rmv{
+            cursor:pointer;
+        }
+    </style>
+
+</head>
+
+<body class="fixed-left">
+
+    <!-- Begin page -->
+    <div id="wrapper">
+
+        <!-- Top Bar Start -->
+        <div class="topbar">
+
+            <!-- LOGO -->
+            <div class="topbar-left">
+                <div class="text-center">
+                    <a href="index/" class="logo"><i class="mdi mdi-radar"></i> <span>VIGILA A TU YAYO</span></a>
+                </div>
+            </div>
+
+            <!-- Button mobile view to collapse sidebar menu -->
+            <nav class="navbar-custom">
+
+                <ul class="list-inline float-right mb-0">
+
+                    <li class="list-inline-item dropdown notification-list">
+                        <a class="nav-link dropdown-toggle waves-effect waves-light nav-user" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
+                            <img src="theme/assets/images/users/avatar-1.jpg" alt="user" class="rounded-circle">
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right profile-dropdown " aria-labelledby="Preview">
+                            
+                            <!-- item-->
+                            <div class="dropdown-item noti-title">
+                                <h5 class="text-overflow"><small>¡Bienvenido {{name}}!</small> </h5>
+                            </div>
+                            <!-- item-->
+                            <a href="#" class="dropdown-item notify-item"><i class="mdi mdi-account"></i> <span>Perfil</span></a>
+                            <!-- item-->
+                            <a href="#" class="dropdown-item notify-item"><i class="mdi mdi-settings"></i> <span>Configuración</span></a>
+                            <!-- item-->
+                            <a href="index/logout" class="dropdown-item notify-item"><i class="mdi mdi-logout"></i> <span>Salir</span></a>
+
+                        </div>
+                    </li>
+
+                </ul>
+
+                <ul class="list-inline menu-left mb-0">
+                    
+                    <li class="float-left">
+                        <button class="button-menu-mobile open-left waves-light waves-effect">
+                                <i class="mdi mdi-menu"></i>
+                            </button>
+                    </li>
+                    
+                </ul>
+
+            </nav>
+
+        </div>
+        <!-- Top Bar End -->
+
+
+        <!-- ========== Left Sidebar Start ========== -->
+
+        <div class="left side-menu">
+            <div class="sidebar-inner slimscrollleft">
+                <!--- Divider -->
+                <div id="sidebar-menu">
+                    
+                    <ul>
+                        
+                        <li class="menu-title">Main</li>
+
+                        <li>
+                            <a href="" class="waves-effect waves-primary dashboard"><i class="mdi mdi-home"></i><span> Dashboard </span></a>
+                        </li>
+                        <li>
+                            <a href="" class="waves-effect waves-primary createUser ocultar"><i class="mdi mdi-account-plus"></i><span></span></a>
+                        </li>
+                        <li>
+                            <a href="" class="waves-effect waves-primary residentes_menu ocultar"><i class="mdi mdi-account-multiple"></i><span> Residentes </span></a>
+                        </li>
+                        <li>
+                            <a href="" class="waves-effect waves-primary familiares_menu ocultar" ><i class="mdi mdi-account-multiple"></i><span> Familiares </span></a>
+                        </li>
+                        <li>
+                            <a href="" class="waves-effect waves-primary acompaniantes_menu ocultar"><i class="mdi mdi-account-multiple"></i><span> Acompañantes </span></a>
+                        </li>
+                        <li>
+                            <a href="" class="waves-effect waves-primary residencias_menu ocultar"><i class="mdi mdi-square-inc"></i><span> Residencias </span></a>
+                        </li>
+                        <li>
+                            <a href="" class="waves-effect waves-primary citas_aceptadas ocultar"><i class="mdi mdi-square-inc"></i><span> Citas aceptadas </span></a>
+                        </li>
+                        <li>
+                            <a href="" class="waves-effect waves-primary historial_citas ocultar"><i class="mdi mdi-square-inc"></i><span> Historial citas </span></a>
+                        </li>
+                        <li>
+                            <a href="" class="waves-effect waves-primary citas_disponibles ocultar"><i class="mdi mdi-square-inc"></i><span> Citas Disponibles </span></a>
+                        </li>
+                        <li>
+                            <a href="index/logout" class="waves-effect waves-primary"><i class="mdi mdi-logout"></i><span> Salir </span></a>
+                        </li>
+                        
+                    </ul>
+
+                    <div class="clearfix"></div>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+        <!-- Left Sidebar End -->
+
+        <!-- ============================================================== -->
+        <!-- Start right Content here -->
+        <!-- ============================================================== -->
+        <div class="content-page">
+            <!-- Start content -->
+            <div class="content">
+                <div class="container-fluid">
+
+                    <!-- Page-Title -->
+                    <div class="row">
+                        
+                        <div class="col-sm-12">
+                            <div class="page-title-box">
+                                <h4 class="page-title">Dashboard</h4>
+                                <ol class="breadcrumb float-right">
+                                    <li class="breadcrumb-item active">Dashboard</li>
+                                </ol>
+                                <div class="clearfix"></div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-12 info ocultar">
+                                <div class="card-box createUserFields">
+                                    <h1>Nuevo Usuario</h1>
+                                   <span>La contraseña del usuario será el nick.</span>
+                                   <label for="nick">Nick</label>
+                                   <input type="text" class="nick" value="" name="nick" disabled>
+                                   <label for="nombre">Nombre</label>
+                                   <input type="text" class="nombre" value="" name="nombre" disabled>
+                                   <label for="apellidos">Apellidos</label>
+                                   <input type="text" class="apellidos" value="" name="apellidos" disabled>
+                                   <label for="dni">DNI</label>
+                                   <input type="text" class="dni" value="" name="dni" disabled maxlength="9">
+                                   <label for="direccion">Dirección</label>
+                                   <input type="text" class="direccion" value="" name="direccion" disabled>
+                                   <label for="cp">CP</label>
+                                   <input type="text" class="cp" value="" name="cp" disabled maxlength="5">
+                                   <label for="telefono">Teléfono</label>
+                                   <input type="text" class="telefono" value="" name="telefono" disabled maxlength="9">
+                                   <label for="correo">Correo electrónico</label>
+                                   <input type="email" class="correo" value="" name="correo" disabled>
+                                   <label for="rol">Tipo de Usuario</label>
+                                   <select class="rol" disabled name="rol">
+                                       <option value="FAM">Familiar</option>
+                                       <option value="ACO">Acompañante</option>
+                                   </select>
+                                   <button class="btn btn-success waves-effect waves-light guardarNewUser ocultar"> Guardar </button>
+                                </div>
+                        </div>      <!--CREAR USUARIO-->
+                        <div class="col-sm-12 info ocultar">
+                                <div class="card-box residencia_info">
+                                   <label for="nombre">Nombre</label>
+                                   <input type="text" class="nombre" value="" name="nombre" disabled>
+                                   <label for="direccion">Dirección</label>
+                                   <input type="text" class="direccion" value="" name="direccion" disabled>
+                                   <label for="cp">CP</label>
+                                   <input type="text" class="cp" value="" name="cp" disabled maxlength="5">
+                                   <label for="telefono">Teléfono</label>
+                                   <input type="text" class="telefono" value="" name="telefono" disabled maxlength="9">
+                                   <button class="btn btn-success waves-effect waves-light guardar ocultar"> Guardar </button>
+                                   <button class="btn btn-danger waves-effect waves-light cancelar ocultar"> Cancelar </button>
+                                   <button class="btn btn-info waves-effect waves-light editar"> Editar </button>
+                                </div>
+                        </div>      <!--RESIDENCIA INFO-->
+                        <div class="col-sm-12 info ocultar">
+                                <div class="card-box familiar_info">
+                                    <h1></h1>
+                                   <input type="hidden" class="id" value="">
+                                   <input type="hidden" class="id_usuario" value="">
+                                   <label for="nombre">Nombre</label>
+                                   <input type="text" class="nombre" value="" name="nombre" disabled>
+                                   <label for="apellidos">Apellidos</label>
+                                   <input type="text" class="apellidos" value="" name="apellidos" disabled>
+                                   <label for="dni">DNI</label>
+                                   <input type="text" class="dni" value="" name="dni" maxlength="9" disabled>
+                                   <label for="direccion">Dirección</label>
+                                   <input type="text" class="direccion" value="" name="direccion" disabled maxlength="5">
+                                   <label for="correo">Correo</label>
+                                   <input type="text" class="correo" value="" name="correo" disabled>
+                                   <label for="cp">CP</label>
+                                   <input type="text" class="cp" value="" name="cp" disabled>
+                                   <label for="telefono">Teléfono</label>
+                                   <input type="text" class="telefono" value="" name="telefono" disabled maxlength="9">
+                                   <button class="btn btn-danger waves-effect waves-light cancelar ocultar"> Cancelar </button>
+                                   <button class="btn btn-dark waves-effect waves-light eliminar ocultar"> Eliminar </button>
+                                </div>
+                        </div>      <!--FAMILIAR Y ACOMPAÑANTE INFO-->
+                        <div class="col-sm-12 info ocultar">
+                                <div class="card-box residente_info">
+                                    <h1>Residente</h1>
+                                   <input type="hidden" class="id" value="">
+                                   <label for="nombre">Nombre</label>
+                                   <input type="text" class="nombre" value="" name="nombre" disabled>
+                                   <label for="apellidos">Apellidos</label>
+                                   <input type="text" class="apellidos" value="" name="apellidos" disabled>
+                                   <label for="dni">DNI</label>
+                                   <input type="text" class="dni" value="" name="dni" maxlength="9" disabled>
+                                   <label for="centro_medico">Centro Médico</label>
+                                   <select class="centro_medico" name="centro_medico" disabled></select>
+                                   <button class="btn btn-success waves-effect waves-light guardarResidente ocultar"> Guardar </button>
+                                   <button class="btn btn-success waves-effect waves-light guardar ocultar"> Guardar </button>
+                                   <button class="btn btn-dark waves-effect waves-light eliminar ocultar"> Eliminar </button>
+                                   <button class="btn btn-danger waves-effect waves-light cancelar ocultar"> Cancelar </button>
+                                   <button class="btn btn-info waves-effect waves-light editar"> Editar </button>
+                                   <button class="btn btn-dark waves-effect waves-light add_fam_res ocultar"> Asignar Familiar </button>
+                                   <button class="btn btn-dark waves-effect waves-light ver_citas"> Citas </button>
+                                </div>
+                        </div>      <!--RESIDENTE INFO-->
+                        <div class="col-sm-12 info ocultar">
+                                <div class="card-box modify_profile">
+                                    <h1>Modifica tus datos</h1>
+                                   <input type="hidden" class="id" value="">
+                                   <input type="hidden" class="id_usuario" value="">
+                                   <label for="direccion">Dirección</label>
+                                   <input type="text" class="direccion" value="" name="direccion">
+                                   <label for="cp">CP</label>
+                                   <input type="text" class="cp" value="" name="cp" maxlength="5">
+                                   <label for="telefono">Teléfono</label>
+                                   <input type="text" class="telefono" value="" name="telefono" maxlength="9">
+                                   <label for="old_password">Antigua contraseña</label>
+                                   <input type="password" class="old_password" value="" name="old_password">
+                                   <label for="password">Nueva contraseña</label>
+                                   <input type="password" class="password" value="" name="password">
+                                   <label for="re_password">Repita nueva contraseña</label>
+                                   <input type="password" class="re_password" value="" name="re_password">
+                                   <button class="btn btn-success waves-effect waves-light save_modify_profile"> Modificar </button>
+                                   <button class="btn btn-black waves-effect waves-light reload_profile"> Recargar datos </button>
+                                </div>
+                        </div>      <!--MODIFY PROFILE-->
+                        <div class="col-sm-12 info ocultar card-box">               
+                                <div class="cita_info row">
+                                    <div class="col-sm-6 cita ocultar">
+                                         <h1>Cita</h1>
+                                       <input type="hidden" class="id" value="">
+                                       <label for="Fecha">Fecha</label>
+                                       <input type="text" class="fecha" value="" name="fecha" disabled>
+                                       <input type="datetime-local" class="fecha_picker" value="" name="fecha" disabled>
+                                       <label for="motivo">Motivo</label>
+                                       <input type="text" class="motivo" value="" name="motivo" disabled>
+                                       <label for="tipo">Tipo</label>
+                                       <select class="tipo" value="" name="tipo" disabled>
+                                           <option value='PREVIA'>PREVIA</option>
+                                           <option value='URGENCIA'>URGENCIA</option>
+                                       </select>
+                                       <label for="fam_bool">Familiar</label>
+                                       <select class="fam_bool" value="" name="fam_bool" disabled>
+                                           <option value='0'>NO</option>
+                                           <option value='1'>SI</option>
+                                       </select>
+                                       <label for="descripcion">Descripción</label>
+                                       <textarea class="descripcion" name="descripcion" disabled rows="4" cols="70"></textarea>
+                                    </div>
+                                    <div class="col-sm-6 viaje_info ocultar">
+                                        <h1>Viaje</h1>
+                                       <input type="hidden" class="id" value="">
+                                       <label for="acompaniante">Acompañante</label>
+                                       <input type="text" class="acompaniante" value="" name="acompaniante" disabled>
+                                       <label for="h_salida">Salida</label>
+                                       <input type="text" class="h_salida" value="" name="h_salida" disabled>
+                                       <label for="h_llegada">Llegada</label>
+                                       <input type="text" class="h_llegada" value="" name="h_llegada" disabled>
+                                       <label for="estado">Estado</label>
+                                       <input type="text" class="estado" value="" name="estado" disabled>
+                                    </div>
+                                    <div class="col-sm-12">
+                                       <button class="btn btn-success waves-effect waves-light guardar_cita ocultar"> Guardar </button>
+                                       <button class="btn btn-success waves-effect waves-light aceptar_cita ocultar"> Aceptar cita </button>
+                                       <button class="btn btn-dark waves-effect waves-light cancelar_cita ocultar"> Cancelar cita </button>
+                                       <button class="btn btn-danger waves-effect waves-light rechazar_cita ocultar"> Rechaza cita </button>
+                                       <button class="btn btn-danger waves-effect waves-light eliminar_cita ocultar"> Eliminar </button>
+                                       <button class="btn btn-danger waves-effect waves-light cancelar ocultar"> Cancelar </button>
+                                       <button class="btn btn-success waves-effect waves-light iniciar ocultar"> Iniciar </button>
+                                       <button class="btn btn-dark waves-effect waves-light finalizar ocultar"> Finalizar </button>
+                                       <button class="btn btn-info waves-effect waves-light ver_viaje ocultar"> Ver Viaje </button>
+                                       <button class="btn btn-info waves-effect waves-light change_fam_cita ocultar"></button>
+                                    </div>
+                                </div>
+                        </div>      <!--CITA CON VIAJE INFO-->                                             
+                        <h3 class="mensaje"></h3>
+                        <div class="col-sm-6 card-box table-responsive citas_table ocultar" data-pattern="priority-columns">
+                            <h1 class="title_table">Citas</h1> <button class="btn btn-info waves-effect waves-light addCita ocultar"> Añadir </button>
+                            <table id="tech-companies-1-clone" class="table table-striped">
+                                <thead>
+                                    <tr>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                </tbody>
+                            </table>
+                        </div>             <!--TABLA CITAS-->
+                        <div class="col-sm-6 card-box table-responsive his_citas_table ocultar" data-pattern="priority-columns">
+                            <h1 class="title_table">Historial de citas</h1>
+                            <table id="tech-companies-1-clone" class="table table-striped">
+                                <thead>
+                                    <tr>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                </tbody>
+                            </table>
+                        </div>         <!--TABLA HISTORIAL CITAS-->
+                        <div class="col-sm-6 card-box table-responsive fam_res_table ocultar" data-pattern="priority-columns">
+                            <h1 class="title_table"></h1>
+                            <table id="tech-companies-1-clone" class="table table-striped">
+                                <thead>
+                                    <tr>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                </tbody>
+                            </table>
+                        </div>           <!--TABLA FAMILIARES Y RESIDENTES ASIGNADOS-->
+                        <div class="col-sm-6 card-box table-responsive all_fam_res_table ocultar" data-pattern="priority-columns">
+                            <h1 class="title_table"></h1>
+                            <table id="tech-companies-1-clone" class="table table-striped">
+                                <thead>
+                                    <tr>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                </tbody>
+                            </table>
+                        </div>       <!--TABLA TODOS LOS FAMILIARES DE LA RESIDENCIA-->
+                        <div class="col-sm-12 card-box table-responsive info_table ocultar" data-pattern="priority-columns">
+                            <h1 class="title_table"></h1> <button class="newUser_Residente btn btn-info waves-effect waves-light">Nuevo</button>
+                            <table id="tech-companies-1-clone" class="table table-striped">
+                                <thead>
+                                    <tr>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                </tbody>
+                            </table>
+                        </div>             <!--TABLA GENERAL PARA RESIDENTES, FAMILIARES Y ACOMPAÑANTES-->
+                    <!-- end row -->
+                    </div>
+                <!-- end container -->
+            </div>
+            <!-- end content -->
+
+            <footer class="footer text-right">
+                2018 © Hornarina.
+            </footer>
+
+        </div>
+        <!-- ============================================================== -->
+        <!-- End Right content here -->
+        <!-- ============================================================== -->
+
+    </div>
+    <!-- END wrapper -->
+
+
+
+    <script>
+        var resizefunc = [];
+    </script>
+
+    <!-- Plugins  -->
+    <script src="theme/assets/js/jquery.min.js"></script>
+    <script src="theme/assets/js/popper.min.js"></script>
+    <!-- Popper for Bootstrap -->
+    <script src="theme/assets/js/bootstrap.min.js"></script>
+    <script src="theme/assets/js/detect.js"></script>
+    <script src="theme/assets/js/fastclick.js"></script>
+    <script src="theme/assets/js/jquery.slimscroll.js"></script>
+    <script src="theme/assets/js/jquery.blockUI.js"></script>
+    <script src="theme/assets/js/waves.js"></script>
+    <script src="theme/assets/js/wow.min.js"></script>
+    <script src="theme/assets/js/jquery.nicescroll.js"></script>
+    <script src="theme/assets/js/jquery.scrollTo.min.js"></script>
+    <script src="theme/plugins/switchery/switchery.min.js"></script>
+
+    <!-- Counter Up  -->
+    <script src="theme/plugins/waypoints/lib/jquery.waypoints.min.js"></script>
+    <script src="theme/plugins/counterup/jquery.counterup.min.js"></script>
+
+    <!--Morris Chart-->
+    <script src="theme/plugins/morris/morris.min.js"></script>
+    <script src="theme/plugins/raphael/raphael-min.js"></script>
+
+    <!-- Page js  -->
+    <script src="theme/assets/pages/jquery.dashboard.js"></script>
+
+    <!-- Custom main Js -->
+    <script src="theme/assets/js/jquery.core.js"></script>
+    <script src="theme/assets/js/jquery.app.js"></script>
+    <!-- responsive-table-->
+    <script src="theme/plugins/RWD-Table-Patterns/dist/js/rwd-table.min.js"></script>
+
+    <script type="text/javascript">
+        jQuery(document).ready(function($) {
+            $('.counter').counterUp({
+                delay: 100,
+                time: 1200
+            });
+        });
+    </script>
+    
+    <script src="js/dashboard.js"></script>
+
+</body>
+
+</html>
